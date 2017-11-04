@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "react-1-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/react1/React1WebPart.js",
+          "manifest": "./src/webparts/react1/React1WebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "React1WebPartStrings": "lib/webparts/react1/loc/{locale}.js"
+  }
+}
