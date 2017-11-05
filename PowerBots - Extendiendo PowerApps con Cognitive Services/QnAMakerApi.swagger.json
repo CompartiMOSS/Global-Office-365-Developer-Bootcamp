@@ -1,0 +1,106 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "PowerBot de Soporte Office 365",
+        "description": "PowerBot de Soporte Office 365"
+    },
+    "host": "westus.api.cognitive.microsoft.com",
+    "basePath": "/",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/qnamaker/v2.0/knowledgebases/b9cc3fa6-6f1f-46d7-a4a5-715445540d72/generateAnswer": {
+            "post": {
+                "summary": "PowerBot",
+                "description": "QnAMakerAPI",
+                "operationId": "PowerBot",
+                "parameters": [
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "required": false,
+                        "type": "string",
+                        "default": "application/json",
+                        "description": "Content-Type",
+                        "x-ms-summary": "Content-Type"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "question": {
+                                    "type": "string",
+                                    "description": "question",
+                                    "x-ms-summary": "question"
+                                }
+                            },
+                            "default": {
+                                "question": "Hola"
+                            }
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "default",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "answers": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "answer": {
+                                                "type": "string",
+                                                "description": "answer",
+                                                "x-ms-summary": "answer"
+                                            },
+                                            "questions": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "description": "questions",
+                                                "x-ms-summary": "questions"
+                                            },
+                                            "score": {
+                                                "type": "integer",
+                                                "format": "int32",
+                                                "description": "score",
+                                                "x-ms-summary": "score"
+                                            }
+                                        }
+                                    },
+                                    "description": "answers",
+                                    "x-ms-summary": "answers"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {},
+    "parameters": {},
+    "responses": {},
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "Ocp-Apim-Subscription-Key"
+        }
+    },
+    "security": [],
+    "tags": []
+}
