@@ -1,0 +1,25 @@
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\bin\Debug\NotesCosmosDB.dll
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\bin\Debug\NotesCosmosDB.pdb
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.csprojResolveAssemblyReference.cache
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.csproj.CoreCompileInputs.cache
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.App.xaml.g.cs
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.Views.NoteListView.xaml.g.cs
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.Views.NoteItemView.xaml.g.cs
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.dll
+C:\Projects\spsbcn\xamarin\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.pdb
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\bin\Debug\NotesCosmosDB.dll
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\bin\Debug\NotesCosmosDB.pdb
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.csproj.CoreCompileInputs.cache
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.App.xaml.g.cs
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.Views.NoteListView.xaml.g.cs
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.Views.NoteItemView.xaml.g.cs
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.dll
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.pdb
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\bin\Debug\NotesCosmosDB.dll
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\bin\Debug\NotesCosmosDB.pdb
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.csproj.CoreCompileInputs.cache
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.App.xaml.g.cs
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.Views.NoteListView.xaml.g.cs
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.Views.NoteItemView.xaml.g.cs
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.dll
+C:\Projects\Office365Bootcamp\AzureParaOffice365Developers\5 - Aplicación móvil\src\NotesCosmosDB\NotesCosmosDB\obj\Debug\NotesCosmosDB.pdb

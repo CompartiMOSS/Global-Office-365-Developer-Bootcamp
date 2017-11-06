@@ -1,0 +1,223 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "logicAppName": {            
+            "type": "String",
+            "metadata": {
+                "description": "The name of the Logic app that you wish to create."
+            }
+        },
+        "cognitiveName": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the Cognitive Service TextAnalytic that you wish to create."
+            }
+        },        
+        "databaseCosmosNameProperty": {            
+            "type": "SecureString",
+            "metadata": {
+                "description": "The name of the DatabaseCosmo you wish to create."
+            }
+        },
+        "databaseCosmosName": {                
+            "type": "String",
+            "metadata": {
+                "description": "The name of the CosmosDB service that you wish to create."
+            }
+        },
+        "appName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the function app that you wish to create."
+            }
+        },
+        "storageAccountType": {
+            "type": "string",
+            "defaultValue": "Standard_LRS",
+            "allowedValues": [
+                "Standard_LRS",
+                "Standard_GRS",
+                "Standard_RAGRS"                
+            ],
+            "metadata": {
+                "description": "Storage Account type"
+            }
+        },
+        "mobileAppName": {
+            "type": "string",
+            "metadata": {
+              "description": "The name of the mobile app that you wish to create."
+            }
+          },
+        "mobileAppService": {
+            "type": "object",
+            "defaultValue": {
+              "tier": "Standard",
+              "skuName": "S1",
+              "capacity": "0"
+            },
+            "metadata": {
+              "description": "The settings of the existing hosting plan."
+            }
+        }
+    },
+    "variables": {
+        "location": "[resourceGroup().location]",
+        "functionAppName": "[parameters('appName')]",
+        "hostingPlanName": "[parameters('appName')]",
+        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'azfunctions')]",
+        "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+        "mobileAppName": "[parameters('mobileAppName')]",
+        "hostingMobilePlanName": "[concat(variables('mobileAppName'), '-plan')]"
+    },
+    
+    "resources": [
+        {
+            "type": "Microsoft.Logic/workflows",
+            "name": "[parameters('logicAppName')]",
+            "apiVersion": "2016-06-01",
+            "location": "[variables('location')]",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "state": "Enabled",
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "triggers": {},
+                    "actions": {},
+                    "outputs": {}
+                },
+                "parameters": {}
+            },
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.CognitiveServices/accounts",
+            "sku": {
+                "name": "S0"
+            },
+            "kind": "TextAnalytics",
+            "name": "[parameters('cognitiveName')]",
+            "apiVersion": "2016-02-01-preview",
+            "location": "[variables('location')]",
+            "scale": null,
+            "properties": {},
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.DocumentDB/databaseAccounts",
+            "kind": "GlobalDocumentDB",
+            "name": "[parameters('databaseCosmosName')]",
+            "apiVersion": "2015-04-08",
+            "location": "[variables('location')]",
+            "tags": {
+                "defaultExperience": "DocumentDB"
+            },
+            "scale": null,
+            "properties": {
+                "databaseAccountOfferType": "Standard",
+                "consistencyPolicy": {
+                    "defaultConsistencyLevel": "Session",
+                    "maxIntervalInSeconds": 5,
+                    "maxStalenessPrefix": 100
+                },
+                "name": "[parameters('databaseCosmosNameProperty')]"
+            },
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "name": "[variables('storageAccountName')]",
+            "apiVersion": "2016-12-01",
+            "location": "[variables('location')]",
+            "kind": "Storage",
+            "sku": {
+                "name": "[parameters('storageAccountType')]"
+            }
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2015-04-01",
+            "name": "[variables('hostingPlanName')]",
+            "location": "[variables('location')]",
+            "properties": {
+                "name": "[variables('hostingPlanName')]",
+                "computeMode": "Dynamic",
+                "sku": "Dynamic"
+            }
+        },
+        {
+            "apiVersion": "2015-08-01",
+            "type": "Microsoft.Web/sites",
+            "name": "[variables('functionAppName')]",
+            "location": "[variables('location')]",
+            "kind": "functionapp",            
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+            ],
+            "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "AzureWebJobsDashboard",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                        },
+                        {
+                            "name": "AzureWebJobsStorage",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                        },
+                        {
+                            "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                        },
+                        {
+                            "name": "WEBSITE_CONTENTSHARE",
+                            "value": "[toLower(variables('functionAppName'))]"
+                        },
+                        {
+                            "name": "FUNCTIONS_EXTENSION_VERSION",
+                            "value": "~1"
+                        },
+                        {
+                            "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                            "value": "6.5.0"
+                        }
+                    ]
+                }
+            }          
+        },
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2015-08-01",
+            "name": "[variables('hostingMobilePlanName')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+              "name": "[parameters('mobileAppService').skuName]",
+              "tier": "[parameters('mobileAppService').tier]",
+              "capacity": "[parameters('mobileAppService').capacity]"
+            },
+            "properties": {
+              "numberOfWorkers": 1
+            }
+          },
+          {
+            "apiVersion": "2015-08-01",
+            "type": "Microsoft.Web/sites",
+            "name": "[variables('mobileAppName')]",
+            "location": "[resourceGroup().location]",
+            "kind": "mobileapp",
+            "properties": {
+              "name": "[variables('mobileAppName')]",
+              "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingMobilePlanName'))]"
+            },
+            "dependsOn": [
+              "[variables('hostingMobilePlanName')]"
+            ]
+         }    
+    ]
+}
