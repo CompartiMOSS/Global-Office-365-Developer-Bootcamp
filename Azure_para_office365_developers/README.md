@@ -25,9 +25,9 @@ Que es necesario:
 ## Exercises
 
 This hands-on lab includes the following exercises:
-- [1-AzureADSSO](/AzureParaOffice365Developers/1_AzureAD_SSO/readme.md)  
-- [2-Creación infraestructura Azure](/AzureParaOffice365Developers/2_Creación_infraestructura_Azure/readme.md)
-- [3-Creación entorno Sharepoint](/AzureParaOffice365Developers/3_Creación_entorno_Sharepoint/readme.md)
-- [4-Creación Lógic App](/AzureParaOffice365Developers/4_Creación_Logic_App/readme.md)
-- [5-Aplicación móvil](/AzureParaOffice365Developers/5_Aplicación_mobile/readme.md)
-- [6-Creación AzureFunction y envío Push](/AzureParaOffice365Developers/6_Creación_AzureFunction_y_envío_Push/readme.md)
+- [1-AzureADSSO](/Azure_para_office365_developers/AzureParaOffice365Developers/1_AzureAD_SSO/readme.md)  
+- [2-Creación infraestructura Azure](/Azure_para_office365_developers/AzureParaOffice365Developers/2_Creación_infraestructura_Azure/readme.md)
+- [3-Creación entorno Sharepoint](/Azure_para_office365_developers/AzureParaOffice365Developers/3_Creación_entorno_Sharepoint/readme.md)
+- [4-Creación Lógic App](/Azure_para_office365_developers/AzureParaOffice365Developers/4_Creación_Logic_App/readme.md)
+- [5-Aplicación móvil](/Azure_para_office365_developers/AzureParaOffice365Developers/5_Aplicación_mobile/readme.md)
+- [6-Creación AzureFunction y envío Push](/Azure_para_office365_developers/AzureParaOffice365Developers/6_Creación_AzureFunction_y_envío_Push/readme.md)
