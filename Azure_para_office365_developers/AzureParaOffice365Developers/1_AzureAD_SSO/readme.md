@@ -1,11 +1,11 @@
 1 - Crear una aplicación MVC en VS2017
-     ![alt text](/AzureParaOffice365Developers/Media/SSO/VS2017MVC1.png)                 
-     ![alt text2](/AzureParaOffice365Developers/Media/SSO/VS2017MVC2.png)
+     ![alt text](/Azure_para_office365_developers/AzureParaOffice365Developers/Media/SSO/VS2017MVC1.png)                 
+     ![alt text2](/Azure_para_office365_developers/AzureParaOffice365Developers/Media/SSO/VS2017MVC2.png)
 
 2 - Una vez creada, nos aparecerá una pantalla por defecto:
     * Seleccionar Connected Services
     * Seleccionar Authentication wiht Azure Active Directory     
-     ![alt text3](/AzureParaOffice365Developers/Media/SSO/VS2017MVC3.png)
+     ![alt text3](/Azure_para_office365_developers/AzureParaOffice365Developers/Media/SSO/VS2017MVC3.png)
 
 3 - Informar los campos y seguir las inidcaciones. Imporatnte: Añadir el Teneant a mano! xxx.onmicrosoft.com.
 

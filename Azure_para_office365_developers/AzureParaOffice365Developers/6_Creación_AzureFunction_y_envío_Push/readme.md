@@ -27,13 +27,13 @@
         }
 
 4 - Ir a aplpicationSetting de la function
-        ![alt text](/AzureParaOffice365Developers/Media/AzureFunction/AppSettings.png)         
+        ![alt text](/Azure_para_office365_developers/AzureParaOffice365Developers/Media/AzureFunction/AppSettings.png)         
         * Añadir la cadena de conexión del NotificationHub. Ir al servicio de notification hub, keys y copiar la connectionString.
       Añadirla con el nombre de MyHubConnectionString        
 
 5 - Configuramos el Notification Hub en la function
         * Ir a Integrate - Advance Settings
-        ![alt text](/AzureParaOffice365Developers/Media/AzureFunction/AdvanceSettings.png)  
+        ![alt text](/Azure_para_office365_developers/AzureParaOffice365Developers/Media/AzureFunction/AdvanceSettings.png)  
         
         * Añadir
                 {
