@@ -15,12 +15,13 @@ import {
 import { MarqueeSelection } from 'office-ui-fabric-react/lib/MarqueeSelection';
 import { IElemento } from './IElementos'
 import SPClient from './SPClient'
+import { WebPartContext } from '@microsoft/sp-webpart-base';
 
 export default class React1 extends React.Component<IReact1Props, {items:IElemento[]}> {
   constructor (props) {
     super(props);
     
-    
+    this._context = this.props.context;
     this.state = { 
         items:  [{ Title: 'Mock List', Id: '1' },
         { Title: 'Mock List 2', Id: '2' },
@@ -30,7 +31,7 @@ export default class React1 extends React.Component<IReact1Props, {items:IElemen
     this.handleClick = this.handleClick.bind(this);
   } 
 
-
+  private _context: WebPartContext;
   private _columns: IColumn[] = [
     {
       key: 'column1',
@@ -54,7 +55,7 @@ export default class React1 extends React.Component<IReact1Props, {items:IElemen
 
 
   handleClick(event) {
-    SPClient.get(this.context, this.props.listname).then((res)=>{
+    SPClient.get(this._context, this.props.listname).then((res)=>{
       this.setState({items:res});
     });
   } 

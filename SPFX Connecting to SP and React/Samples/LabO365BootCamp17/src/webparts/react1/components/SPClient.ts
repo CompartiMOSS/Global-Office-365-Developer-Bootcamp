@@ -22,10 +22,12 @@ export default class SPClient  {
             });
         }
 
-        return context.spHttpClient.get(context.pageContext.web.absoluteUrl + `_api/web/lists/getbytitle('${listName}')/items$select=Title,Id`, 
+        return context.spHttpClient.get(context.pageContext.web.absoluteUrl + `/_api/web/lists/getbytitle('${listName}')/items?$select=Title,Id`, 
                                         SPHttpClient.configurations.v1)
         .then((response: SPHttpClientResponse) => {
-          return response.json();
+          return response.json().then((responseJSON: any) => {  
+             return responseJSON.value;
+            });  
         });
     
     }

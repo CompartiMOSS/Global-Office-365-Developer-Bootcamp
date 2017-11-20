@@ -23,7 +23,8 @@ export default class React1WebPart extends BaseClientSideWebPart<IReact1WebPartP
       React1,
       {
         description: this.properties.description,
-        listname: "contactos"
+        listname: "contactos",
+        context: this.context
       }
     );
 

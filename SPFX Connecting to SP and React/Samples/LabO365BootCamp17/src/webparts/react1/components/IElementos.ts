@@ -1,5 +1,5 @@
 export interface IElemento {
-    Title: string;
-    Id: string;
+  Id: string;  
+  Title: string;
   }
   
